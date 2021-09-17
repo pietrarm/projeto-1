@@ -1,5 +1,5 @@
 ###################################
-# Script setup sdm_data
+# Script setup do_any do_many
 # R version 4.1 .1
 # modler version 0.0.1
 ###################################
@@ -35,13 +35,14 @@ vars_stack <-stack(lista_arquivos)
 
 sp_maxent <- do_any(species_name = unique(sp_input[1]),
                     algorithm = "maxnet",
+                    #project_model = TRUE
                     #proj_data_folder = "./dados/raster/proj"
                     predictors = vars_stack,
                     models_dir = "./resultados",
                     png_partitions = TRUE,
                     write_bin_cut = FALSE,
-                    equalize = TRUE,
-                    write_rda = TRUE)
+                    equalize = FALSE,
+                    write_rda = FALSE)
 
 ### Rodando a função do_amay para mais de um algoritmo (Maxent)
 
